@@ -1,5 +1,6 @@
-package model;
+package com.puppies.proyectoVeterinaria.model;
 
+import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,6 +19,7 @@ public class Mascota {
     private Long id;
 
     private Long idCLiente;
+    @NotNull
     private String nombre;
     private String raza;
     private Integer edad;

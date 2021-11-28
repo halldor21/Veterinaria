@@ -1,5 +1,6 @@
-package model;
+package com.puppies.proyectoVeterinaria.model;
 
+import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,6 +19,7 @@ public class Cliente {
     private Long id;
 
     private Long idVeterinaria;
+    @NotNull
     private String nombre;
     private String dni;
     private String direccion;
