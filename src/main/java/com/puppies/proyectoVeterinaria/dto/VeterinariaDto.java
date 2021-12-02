@@ -9,8 +9,8 @@ import lombok.ToString;
 @ToString
 public class VeterinariaDto {
 
-    private String nombre;
-    private String direccion;
-    private String telefono;
+    private String name;
+    private String adress;
+    private String phone;
 
 }

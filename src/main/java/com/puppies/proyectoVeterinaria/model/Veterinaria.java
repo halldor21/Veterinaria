@@ -18,14 +18,15 @@ public class Veterinaria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    private String nombre;
+    private String name;
     private String cuit;
-    private String direccion;
-    private String telefono;
+    private String adress;
+    private String phone;
 
     public Veterinaria(){
-        this.nombre = "";
+        this.name = "";
         this.cuit = "";
+        this.phone = "";
     }
 
 }
