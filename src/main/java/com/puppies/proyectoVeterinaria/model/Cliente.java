@@ -20,9 +20,16 @@ public class Cliente {
 
     private Long idVeterinaria;
     @NotNull
-    private String nombre;
+    private String name;
     private String dni;
-    private String direccion;
-    private String telefono;
+    private String adress;
+    private String phone;
+
+    public Cliente(){
+        this.name = "";
+        this.dni = "";
+        this.adress = "";
+        this.phone = "";
+    }
 
 }

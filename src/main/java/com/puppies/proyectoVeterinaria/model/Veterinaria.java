@@ -26,6 +26,7 @@ public class Veterinaria {
     public Veterinaria(){
         this.name = "";
         this.cuit = "";
+        this.adress = "";
         this.phone = "";
     }
 

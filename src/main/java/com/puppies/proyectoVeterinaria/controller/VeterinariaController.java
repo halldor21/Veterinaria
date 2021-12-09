@@ -12,15 +12,6 @@ public class VeterinariaController {
     @Autowired
     VeterinariaService veterinariaService;
 
-//    @GetMapping("/prueba")
-//    public Veterinaria getVeterinaria() {
-//        Veterinaria v1 = new Veterinaria();
-//        v1.setNombre("Cachorros");
-//        v1.setDireccion("Albarellos 1016");
-//        v1.setCuit("30-70924649-2");
-//        return v1;
-//    }
-
     @GetMapping("/findeVet/{name}")
     public VeterinariaDto getVeterinariaByName(@PathVariable String name){
         VeterinariaDto veterinaria = veterinariaService.findVeterinaria(name);
