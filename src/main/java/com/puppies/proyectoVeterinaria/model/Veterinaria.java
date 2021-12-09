@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -23,11 +24,18 @@ public class Veterinaria {
     private String adress;
     private String phone;
 
+    //RELACIONES
+    @OneToMany(mappedBy = "veterinaria", fetch = FetchType.LAZY)
+    private List<Cliente> clientes;
+
+
+    //CONSTRUCTOR
     public Veterinaria(){
         this.name = "";
         this.cuit = "";
         this.adress = "";
         this.phone = "";
     }
+
 
 }

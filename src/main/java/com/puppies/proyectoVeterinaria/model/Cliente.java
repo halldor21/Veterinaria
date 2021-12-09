@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -17,19 +18,27 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private Long idVeterinaria;
-    @NotNull
     private String name;
     private String dni;
     private String adress;
     private String phone;
 
+    //RELACION
+    @OneToMany(mappedBy = "cliente" ,fetch = FetchType.LAZY)
+    private List<Mascota> mascotas;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_veterinaria", nullable = false)
+    private Veterinaria veterinaria;
+
+
+    //CONSTRUCTOR
     public Cliente(){
         this.name = "";
         this.dni = "";
         this.adress = "";
         this.phone = "";
     }
+
 
 }
