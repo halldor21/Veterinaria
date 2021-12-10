@@ -2,11 +2,11 @@ package com.puppies.proyectoVeterinaria.controller;
 
 import com.puppies.proyectoVeterinaria.dto.ClienteDto;
 import com.puppies.proyectoVeterinaria.model.Cliente;
-import com.puppies.proyectoVeterinaria.model.Veterinaria;
 import com.puppies.proyectoVeterinaria.service.ClienteService;
-import com.puppies.proyectoVeterinaria.service.VeterinariaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class ClienteController {
@@ -14,24 +14,30 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
-    @GetMapping("/findByName/{name}")
+    @GetMapping("/Cliente/findByName/{name}")
     public ClienteDto getClienteByName(@PathVariable String name){
-        ClienteDto cliente = clienteService.findClientByName(name);
-        return cliente;
+        return clienteService.findClientByName(name);
     }
 
-    @GetMapping("/findByDni/{dni}")
+    @GetMapping("/Cliente/findByDni/{dni}")
     public ClienteDto getClienteByDni(@PathVariable String dni){
         ClienteDto cliente = clienteService.findClientByDni(dni);
         return cliente;
     }
 
+    @GetMapping("/Cliente/findAll")
+    public List<Cliente> findAllClients(){
+        return clienteService.findAllClients();
+    }
 
-    @PostMapping("/saveClient")
+
+    @PostMapping("/Cliente/saveClient")
     public String saveNewCliente(@RequestBody Cliente body) {
         clienteService.saveCliente(body);
         return "Cliente cargado";
     }
+
+
 
 }
 

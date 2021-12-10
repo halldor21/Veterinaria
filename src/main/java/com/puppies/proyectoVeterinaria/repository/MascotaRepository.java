@@ -1,6 +1,6 @@
 package com.puppies.proyectoVeterinaria.repository;
 
-import com.puppies.proyectoVeterinaria.model.Cliente;
+import com.puppies.proyectoVeterinaria.model.Mascota;
 import com.puppies.proyectoVeterinaria.model.Veterinaria;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -8,13 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ClienteRepository extends CrudRepository<Cliente,Long> {
+public interface MascotaRepository extends CrudRepository<Mascota,Long> {
 
+    Mascota findByName(String name);
 
-    Cliente findByName(String name);
-
-    Cliente findByDni(String dni);
-
-    List<Cliente> findAll();
+    List<Mascota> findAll();
 
 }

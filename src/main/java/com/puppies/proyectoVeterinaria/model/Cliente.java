@@ -24,12 +24,13 @@ public class Cliente {
     private String phone;
 
     //RELACION
+
     @OneToMany(mappedBy = "cliente" ,fetch = FetchType.LAZY)
     private List<Mascota> mascotas;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_veterinaria", nullable = false)
-    private Veterinaria veterinaria;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "id_veterinaria", nullable = false)
+//    private Veterinaria veterinaria;
 
 
     //CONSTRUCTOR

@@ -11,10 +11,9 @@ import java.util.List;
 @Repository
 public interface VeterinariaRepository extends CrudRepository<Veterinaria,Long> {
 
-    List<Veterinaria> findAll();
-
     Veterinaria findByName(String name);
 
+    List<Veterinaria> findAll();
 
 
 }

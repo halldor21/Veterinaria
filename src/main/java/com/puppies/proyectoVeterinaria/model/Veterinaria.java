@@ -24,9 +24,10 @@ public class Veterinaria {
     private String adress;
     private String phone;
 
-    //RELACIONES
-    @OneToMany(mappedBy = "veterinaria", fetch = FetchType.LAZY)
-    private List<Cliente> clientes;
+//    //RELACIONES
+//
+//    @OneToMany(mappedBy = "veterinaria", fetch = FetchType.LAZY)
+//    private List<Cliente> clientes;
 
 
     //CONSTRUCTOR

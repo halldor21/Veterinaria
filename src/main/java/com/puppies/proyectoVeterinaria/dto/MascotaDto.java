@@ -9,10 +9,9 @@ import lombok.ToString;
 @ToString
 public class MascotaDto {
 
-    private Long idCliente;
     private String name;
     private String race;
-    private String weight;
+    private Double weight;
     private Boolean ConfirmVaccination;
 
 }

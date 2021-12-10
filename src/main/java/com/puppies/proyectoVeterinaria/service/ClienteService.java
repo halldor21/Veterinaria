@@ -24,6 +24,10 @@ public class ClienteService {
         return convertClienteDto(cliente);
     }
 
+    public List<Cliente> findAllClients() {
+        return clienteRepository.findAll();
+    }
+
     public ClienteDto convertClienteDto(Cliente cliente){
         ClienteDto cDto = new ClienteDto();
         cDto.setName(cliente.getName());
@@ -33,10 +37,6 @@ public class ClienteService {
 
     public void saveCliente(Cliente cliente) {
         clienteRepository.save(cliente);
-    }
-
-    public List<Cliente> findAll() {
-        return clienteRepository.findAll();
     }
 
 }

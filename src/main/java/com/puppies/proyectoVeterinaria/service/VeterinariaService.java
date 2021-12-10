@@ -15,11 +15,10 @@ public class VeterinariaService{
     @Autowired
     VeterinariaRepository veterinariaRepository;
 
-    public VeterinariaDto findVeterinaria(String name){
+    public VeterinariaDto findVeterinariaByName(String name){
         Veterinaria veterinaria = veterinariaRepository.findByName(name);
         return convertVeterinariaDto(veterinaria);
     }
-
 
     public VeterinariaDto convertVeterinariaDto(Veterinaria veterinaria){
         VeterinariaDto vDto = new VeterinariaDto();
@@ -29,14 +28,12 @@ public class VeterinariaService{
         return vDto;
     }
 
-
     public void saveVeterinaria(Veterinaria veterinaria) {
         veterinariaRepository.save(veterinaria);
     }
 
-    public List<Veterinaria> findAllPersons() {
+    public List<Veterinaria> findAllVets() {
         return veterinariaRepository.findAll();
     }
-
 
 }
